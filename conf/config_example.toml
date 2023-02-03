@@ -1,0 +1,51 @@
+[limiter]
+# 部分外网访问是使用端口转发来实现的，需要排除特定的ip
+exclude_ip = ["192.168.2.1","10.144.1.0/24"]
+
+[emby]
+enable = true
+url="http://192.168.2.235:8096"
+api_key="xxx"
+
+
+[downloader.media]# 下载器类.下载器名称
+type="transmission"
+host="192.168.2.234"
+port=9091
+protocol="http"
+rpc_path="/transmission/rpc"
+username="user"
+password="password"
+use_alt_speed_limits=true # 是否启用时间段限速
+origin_speed_down=30000 # 原下载速度限制 KB/s
+origin_speed_up=5000 # 原上传速度限制 KB/s
+limit_speed_down=30000 # 触发后限速下载速度 KB/s
+limit_speed_up=1000 # 触发后限速上传速度 KB/s
+
+
+[downloader.brush]# 下载器类.下载器名称
+type="qbittorrent"
+host="192.168.2.234"
+port=8080
+username="admin"
+password="admin"
+use_alt_speed_limits=true # 是否启用时间段限速
+origin_speed_down=30000 # 原下载速度限制 KB/s
+origin_speed_up=5000 # 原上传速度限制 KB/s
+limit_speed_down=30000 # 触发后限速下载速度 KB/s
+limit_speed_up=1000 # 触发后限速上传速度 KB/s
+
+# 多下载器设置样例
+# [downloader.seed]# 下载器类.下载器名称
+# type="transmission"
+# host="192.168.2.234"
+# port=9092
+# protocol="http"
+# rpc_path="/transmission/rpc"
+# username="user"
+# password="user"
+# use_alt_speed_limits=true # 是否启用时间段限速
+# origin_speed_down=30000 # 原下载速度限制 KB/s
+# origin_speed_up=2000 # 原上传速度限制 KB/s
+# limit_speed_down=30000 # 触发后限速下载速度 KB/s
+# limit_speed_up=1000 # 触发后限速上传速度 KB/s

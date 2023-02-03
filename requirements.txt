@@ -1,0 +1,9 @@
+rtoml~=0.9.0
+easydict~=1.10
+apscheduler~=3.9.0
+quart~=0.18.0
+requests~=2.26.0
+IPy~=1.1
+qbittorrent-api~=2022.11.40
+transmission-rpc~=4.0.0a5
+hypercorn~=0.14.3
