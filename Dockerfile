@@ -8,4 +8,4 @@ ADD . /app
 WORKDIR /app
 RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 # Run server.py when the container launches
-CMD ["hypercorn", "main:app"]
+CMD ["hypercorn", "-b","0.0.0.0:8088","main:app"]

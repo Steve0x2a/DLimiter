@@ -6,4 +6,4 @@ app = Quart(__name__)
 
 app.register_blueprint(bp_player)
 app.logger.setLevel(logging.INFO)
-app.run(host="0.0.0.0", port=8088)
+# app.run(host="0.0.0.0", port=8088)

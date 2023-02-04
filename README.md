@@ -18,6 +18,16 @@
 docker-compose up -d
 ```
 
+确保程序正确运行后，打开播放器的后台页面，添加 webhooks 。如 Emby 设置如下：
+![](https://vip2.loli.io/2023/02/04/coeBCiRsXtkhFVI.png)
+
+## Webhooks
+
+### Emby
+- URI: `/player/emby`
+- 事件: 播放事件
+
+
 ## 配置文件解析
 
 首先是`exclude_ip`
