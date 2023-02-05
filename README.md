@@ -41,8 +41,6 @@ docker run -d \
 
 ### 群晖
 
-将本项目下 conf 文件夹里的`config_example.toml`, 重命名为`config.toml`, 并上传到群晖.
-
 群晖 Docker 注册表里搜索`dlimiter`, 下载镜像，并使用该镜像进行新建容器.
 ![](https://vip2.loli.io/2023/02/05/IJgmCWebRAEvGwr.png)
 
@@ -54,6 +52,8 @@ docker run -d \
 
 检查环境配置是否正确，一般如下图即可: 
 ![](https://vip2.loli.io/2023/02/05/CMJs72kywHRKm1z.png)
+
+第一次运行后，在前面设置的文件映射目录下会生成一个`config_example.toml`文件, 重命名为`config.toml`, 配置好相关信息, 并重启容器.
 
 最后看到日志有类似以下输出即成功: 
 ![](https://vip2.loli.io/2023/02/05/X5Bjt6EKPNzUvpZ.png)
