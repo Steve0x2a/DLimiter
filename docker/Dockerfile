@@ -14,7 +14,7 @@ WORKDIR ${WORKDIR}
 
 RUN apk --no-cache add -f git bash tzdata \
     && pip install --upgrade pip wheel \
-    && pip install -r https://raw.githubusercontent.com/Steve0x2a/DLimiter/main/requirements.txt \
+    && pip install -r https://raw.githubusercontent.com/Steve0x2a/DLimiter/${DLIMITER_BRANCH}/requirements.txt \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/* \
     && git config --global pull.ff only \
     && git clone -b ${DLIMITER_BRANCH} ${DLIMITER_REPO_URL} ${WORKDIR} \
