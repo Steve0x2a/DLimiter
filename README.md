@@ -14,8 +14,25 @@
 
 首先将本项目clone到本地。复制conf文件夹里的`config_example.toml`，重命名为`config.toml`，并配置相关信息，放在本项目文件夹。然后执行：
 
+### docker-compose
+
 ```bash
 docker-compose up -d
+```
+
+### docker-cli
+
+```bash
+docker run -d \
+    --name=dlimiter \
+    -p 8088:8088 \
+    -e DLIMITER_CN_UPDATE=true \
+    -e DLIMITER_AUTO_UPDATE=true \
+    -e TZ=Asia/Shanghai \
+    -v ${PWD}/conf:/app/conf \
+    --hostname=dlimiter \
+    --restart=always \
+    steve0x2a/dlimiter:latest
 ```
 
 确保程序正确运行后，打开播放器的后台页面，添加 webhooks 。如 Emby 设置如下：
