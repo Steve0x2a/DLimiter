@@ -1,4 +1,4 @@
-name: Build DLimit Image
+name: Build DLimiter Image
 on:
   workflow_dispatch:
   push:
@@ -44,4 +44,4 @@ jobs:
             linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/dlimit:latest
+            ${{ secrets.DOCKER_USERNAME }}/dlimiter:latest

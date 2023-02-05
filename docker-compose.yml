@@ -4,6 +4,6 @@ services:
         image: 0x2a/dlimiter
         restart: always
         volumes:
-            - ./config.toml:/app/conf/config.toml
+            - ./conf:/app/conf
         ports:
             - 8088:8088

@@ -10,7 +10,7 @@ WORKDIR ${WORKDIR}
 
 RUN apk --no-cache add -f git \
     && pip install --upgrade pip wheel \
-    && pip install -r https://raw.githubusercontent.com/Steve0x2a/DLimiter/main/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple \
+    && pip install -r https://raw.githubusercontent.com/Steve0x2a/DLimiter/main/requirements.txt \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/* \
     && git config --global pull.ff only \
     && git clone ${REPO_URL} ${WORKDIR} \
