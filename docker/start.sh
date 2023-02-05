@@ -39,4 +39,4 @@ else
     echo "程序自动升级已关闭，如需自动升级请在创建容器时设置环境变量：DLIMITER_AUTO_UPDATE=true"
 fi
 
-hypercorn -b 0.0.0.0:8088 main:app
+hypercorn -b 0.0.0.0:"${DLIMITER_PORT}" main:app

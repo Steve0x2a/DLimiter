@@ -7,7 +7,8 @@ ENV LANG="C.UTF-8" \
     DLIMITER_BRANCH=main \
     WORKDIR="/app" \
     DLIMITER_CN_UPDATE=true \
-    DLIMITER_AUTO_UPDATE=true
+    DLIMITER_AUTO_UPDATE=true \
+    DLIMITER_PORT=8088
 
 WORKDIR ${WORKDIR}
 
@@ -19,6 +20,5 @@ RUN apk --no-cache add -f git bash tzdata \
     && git clone -b ${DLIMITER_BRANCH} ${DLIMITER_REPO_URL} ${WORKDIR} \
     && git config --global --add safe.directory ${WORKDIR}
 
-EXPOSE 8088
 VOLUME ["/app/conf"]
 ENTRYPOINT ["/app/docker/start.sh"]
