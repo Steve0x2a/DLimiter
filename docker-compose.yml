@@ -10,6 +10,7 @@ services:
         environment: 
             - DLIMITER_CN_UPDATE=true
             - DLIMITER_AUTO_UPDATE=true
+            - DLIMITER_PORT=8088
             - TZ=Asia/Shanghai
         hostname: dlimiter
         container_name: dlimiter

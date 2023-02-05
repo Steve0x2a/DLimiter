@@ -28,6 +28,7 @@ docker run -d \
     -p 8088:8088 \
     -e DLIMITER_CN_UPDATE=true \
     -e DLIMITER_AUTO_UPDATE=true \
+    -e DLIMITER_PORT=8088 \
     -e TZ=Asia/Shanghai \
     -v ${PWD}/conf:/app/conf \
     --hostname=dlimiter \
