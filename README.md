@@ -35,6 +35,7 @@ docker run -d \
     --restart=always \
     steve0x2a/dlimiter:latest
 ```
+如果你访问github的网络不太好，可以考虑在创建容器时增加设置一个环境变量-e DLIMITER_REPO_URL="https://ghproxy.com/https://github.com/Steve0x2a/DLimiter.git" \。
 
 确保程序正确运行后, 打开播放器的后台页面, 添加 webhooks . 如 Emby 设置如下: 
 ![](https://vip2.loli.io/2023/02/04/coeBCiRsXtkhFVI.png)
