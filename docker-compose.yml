@@ -1,7 +1,7 @@
 version: '3'
 services:
     dlimiter:
-        image: 0x2a/dlimiter
+        image: steve0x2a/dlimiter
         restart: always
         volumes:
             - ./conf:/app/conf

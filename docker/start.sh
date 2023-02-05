@@ -6,7 +6,7 @@ if [ ! -s /tmp/requirements.txt.sha256sum ]; then
 fi
     echo "更新程序..."
     git remote set-url origin "${REPO_URL}" &> /dev/null
-    git clean -dffx
+    find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
     git fetch --depth 1 origin ${BRANCH}
     git reset --hard origin/${BRANCH}
     if [ $? -eq 0 ]; then
