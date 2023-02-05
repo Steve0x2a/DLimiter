@@ -12,7 +12,7 @@
 
 ## 使用方法
 
-首先将本项目clone到本地。复制conf文件夹里的`config_example.toml`，重命名为`config.toml`，并配置相关信息。然后执行：
+首先将本项目clone到本地。复制conf文件夹里的`config_example.toml`，重命名为`config.toml`，并配置相关信息，放在本项目文件夹。然后执行：
 
 ```bash
 docker-compose up -d
