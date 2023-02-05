@@ -45,3 +45,13 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/dlimiter:latest
+
+      -
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ secrets.DOCKER_USERNAME }}/dlimiter
+          short-description: 用于下载器平衡PT上传和外网视频播放的限速器
+          readme-filepath: ./README.md
