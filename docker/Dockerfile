@@ -1,21 +1,24 @@
 FROM python:3.10-alpine
 
-ENV REPO_URL="https://github.com/Steve0x2a/DLimiter" \
-    BRANCH=main \
+ENV LANG="C.UTF-8" \
+    TZ="Asia/Shanghai" \
+    PS1="\u@\h:\w \$ " \
+    DLIMITER_REPO_URL="https://github.com/Steve0x2a/DLimiter" \
+    DLIMITER_BRANCH=main \
     WORKDIR="/app" \
-    CN_UPDATE=true \
-    AUTO_UPDATE=true 
+    DLIMITER_CN_UPDATE=true \
+    DLIMITER_AUTO_UPDATE=true
 
 WORKDIR ${WORKDIR}
 
-RUN apk --no-cache add -f git \
+RUN apk --no-cache add -f git bash tzdata \
     && pip install --upgrade pip wheel \
     && pip install -r https://raw.githubusercontent.com/Steve0x2a/DLimiter/main/requirements.txt \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/* \
     && git config --global pull.ff only \
-    && git clone ${REPO_URL} ${WORKDIR} \
+    && git clone -b ${DLIMITER_BRANCH} ${DLIMITER_REPO_URL} ${WORKDIR} \
     && git config --global --add safe.directory ${WORKDIR}
 
 EXPOSE 8088
 VOLUME ["/app/conf"]
-ENTRYPOINT ["/app/docker/start.sh"]    
+ENTRYPOINT ["/app/docker/start.sh"]
