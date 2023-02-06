@@ -12,6 +12,10 @@ enable = true
 url="http://192.168.2.235:8096"
 api_key="xxx"
 
+[plex]
+enable = true
+url="https://36-26-97-76.b34faa6321184d1f83536e37d9a818ef.plex.direct:32400"
+token="xxx" 
 
 [downloader.media]# 下载器类.下载器名称
 type="transmission"

@@ -14,5 +14,5 @@ async def jellyfin():
         if Config().cfg.jellyfin.enable:
             jellyfin_apply_limit(data)
     except NameError as e:
-        app.logger.error("Jellyfin 配置缺失， error: {}".format(e))
+        app.logger.error("Jellyfin 解析出错， error: {}".format(e))
     return "jellyfin"

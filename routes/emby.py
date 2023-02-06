@@ -14,5 +14,5 @@ async def emby():
         if Config().cfg.emby.enable:
             emby_apply_limit(data.to_dict(flat=False))
     except NameError as e:
-        app.logger.error("Emby 配置缺失， error: {}".format(e))
+        app.logger.error("Emby 解析出错， error: {}".format(e))
     return "emby"

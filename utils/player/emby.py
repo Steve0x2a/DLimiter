@@ -11,13 +11,13 @@ from log import logger
 def parse_emby_webhooks(context: dict):
     try:
         data = context['data']
-        for item in data:
-            event = json.loads(str(item))
-            if event['Event'] == "playback.start":
-                return Event(EVENT_START, event['Session']['RemoteEndPoint'], True)
-            if event['Event'] == "playback.stop":
-                return Event(EVENT_STOP, event['Session']['RemoteEndPoint'], True)
-            return Event(EVENT_OTHER, event['Session']['RemoteEndPoint'], True)
+        item = data[0]
+        event = json.loads(str(item))
+        if event['Event'] == "playback.start":
+            return Event(EVENT_START, event['Session']['RemoteEndPoint'], True)
+        if event['Event'] == "playback.stop":
+            return Event(EVENT_STOP, event['Session']['RemoteEndPoint'], True)
+        return Event(EVENT_OTHER, event['Session']['RemoteEndPoint'], True)
     except Exception as e:
         logger.error("解析emby webhooks错误:{},context:{}".format(e, context))
         return Event()

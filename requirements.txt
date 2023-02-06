@@ -7,3 +7,4 @@ IPy~=1.1
 qbittorrent-api~=2022.11.40
 transmission-rpc~=4.0.0a5
 hypercorn~=0.14.3
+plexapi~=4.13.0

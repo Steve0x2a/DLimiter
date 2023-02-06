@@ -14,6 +14,7 @@
 
 - Emby
 - Jellyfin
+- Plex
 
 ## 使用方法
 
@@ -76,7 +77,7 @@ Emby 设置如下:
 ### Jellyfin
 - URI: `/player/jellyfin`
 
-Jellyfin 需要自行安装`Webhooks`插件并重启服务：
+Jellyfin 需要自行安装`Webhooks`插件并重启服务:
 ![](https://vip2.loli.io/2023/02/06/WCwiFmGEVKq8U96.png)
 
 点击`Add Generic Destination`, 新建Webhooks.
@@ -87,6 +88,15 @@ Jellyfin 需要自行安装`Webhooks`插件并重启服务：
 ![](https://vip2.loli.io/2023/02/06/xEeijmBgZ1G5qJd.png)
 
 按上图配置后并保存。
+
+### Plex
+- URI: `/player/plex`
+Plex 配置 Webhooks 十分简单:
+![](https://vip2.loli.io/2023/02/06/98wKtbjIqVCydnk.png)
+
+另外, Plex 配置文件里的 token 可以根据这篇[文章](https://www.plexopedia.com/plex-media-server/general/plex-token/)获得.
+
+当前 Plex 判断是否为内网是根据 Webhooks 的 `local` 字段来判断, 不确认这个字段是否可以识别端口转发情况, 如果发现不能识别, 请提 issue, 会尝试使用 api 增强准确性.
 
 ## 配置文件解析
 
@@ -123,5 +133,5 @@ api_key="xxx"
 
 
 ## TODO
-- [ ] 支持Plex
-- [ ] 支持更多限速方式不仅限于Webhooks
+- [ ] 支持同种多播放器设置
+- [ ] 支持更多限速方式不仅限于 Webhooks
