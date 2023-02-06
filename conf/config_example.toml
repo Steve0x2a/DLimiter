@@ -7,6 +7,11 @@ enable = true
 url="http://192.168.2.235:8096"
 api_key="xxx"
 
+[jellyfin]
+enable = true
+url="http://192.168.2.235:8096"
+api_key="xxx"
+
 
 [downloader.media]# 下载器类.下载器名称
 type="transmission"

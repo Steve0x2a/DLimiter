@@ -10,6 +10,11 @@
 
 业余摸鱼工具(~~屎山~~), 如有意见, 建议issue或直接pr.
 
+### 目前支持播放器
+
+- Emby
+- Jellyfin
+
 ## 使用方法
 
 首先将本项目clone到本地.复制conf文件夹里的`config_example.toml`, 重命名为`config.toml`, 并配置相关信息, 放在本项目文件夹. 然后执行: 
@@ -37,8 +42,6 @@ docker run -d \
 ```
 如果你访问github的网络不太好，可以考虑在创建容器时增加设置一个环境变量-e DLIMITER_REPO_URL="https://ghproxy.com/https://github.com/Steve0x2a/DLimiter.git" \。
 
-确保程序正确运行后, 打开播放器的后台页面, 添加 webhooks . 如 Emby 设置如下: 
-![](https://vip2.loli.io/2023/02/04/coeBCiRsXtkhFVI.png)
 
 ### 群晖
 
@@ -60,16 +63,30 @@ docker run -d \
 ![](https://vip2.loli.io/2023/02/05/X5Bjt6EKPNzUvpZ.png)
 
 
-### 设置Emby
+## 设置Webhooks
 
-确保程序正确运行后, 打开播放器的后台页面, 添加 webhooks .如 Emby 设置如下: 
-
-## Webhooks
+确保程序正确运行后, 打开播放器的后台页面, 添加 webhooks .
 
 ### Emby
 - URI: `/player/emby`
 - 事件: 播放事件
+Emby 设置如下: 
+![](https://vip2.loli.io/2023/02/04/coeBCiRsXtkhFVI.png)
 
+### Jellyfin
+- URI: `/player/jellyfin`
+
+Jellyfin 需要自行安装`Webhooks`插件并重启服务：
+![](https://vip2.loli.io/2023/02/06/WCwiFmGEVKq8U96.png)
+
+点击`Add Generic Destination`, 新建Webhooks.
+![](https://vip2.loli.io/2023/02/06/UJIobCMPt6e2KBc.png)
+
+![](https://vip2.loli.io/2023/02/06/Y7glFOJ9C5BNVRH.png)
+
+![](https://vip2.loli.io/2023/02/06/xEeijmBgZ1G5qJd.png)
+
+按上图配置后并保存。
 
 ## 配置文件解析
 
@@ -106,5 +123,5 @@ api_key="xxx"
 
 
 ## TODO
-- [ ] 支持其他播放器
+- [ ] 支持Plex
 - [ ] 支持更多限速方式不仅限于Webhooks

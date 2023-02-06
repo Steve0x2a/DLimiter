@@ -1,8 +1,8 @@
 from quart import Blueprint
 from quart import request
-from utils.limiter import player_apply_limit
+from utils.limiter import emby_apply_limit
 from quart import current_app as app
-from conf import config
+from conf import Config
 
 bp_emby = Blueprint("emby", __name__, url_prefix="/emby")
 
@@ -10,8 +10,9 @@ bp_emby = Blueprint("emby", __name__, url_prefix="/emby")
 @bp_emby.route("/", methods=['POST', 'GET'], strict_slashes=False)
 async def emby():
     data = await request.form
-    if config.emby.enable:
-        player_apply_limit("emby", data.to_dict(flat=False))
+    try:
+        if Config().cfg.emby.enable:
+            emby_apply_limit(data.to_dict(flat=False))
+    except NameError as e:
+        app.logger.error("Emby 配置缺失， error: {}".format(e))
     return "emby"
-
-
