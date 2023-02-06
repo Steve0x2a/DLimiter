@@ -41,4 +41,6 @@ class Transmission(object):
 
         self.client.set_session(speed_limit_down=speed_down,
                                 speed_limit_up=speed_up,
-                                alt_speed_time_enabled=alt_speed_time_enabled)
+                                alt_speed_time_enabled=alt_speed_time_enabled,
+                                speed_limit_down_enabled=True,
+                                speed_limit_up_enabled=True)

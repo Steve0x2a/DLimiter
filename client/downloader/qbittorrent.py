@@ -30,6 +30,8 @@ class QBittorrent(object):
         self.name = name
 
     def set_speed_limit(self, speed_down: int, speed_up: int, alt_speed_time_enabled: bool = False):
-        self.client.transfer.download_limit = speed_down * 1024
-        self.client.transfer.upload_limit = speed_up * 1024
-        self.client.transfer.speedLimitsMode = alt_speed_time_enabled
+        self.client.application.preferences = {
+            "scheduler_enabled": alt_speed_time_enabled,
+            "up_limit": speed_up * 1024,
+            "dl_limit": speed_down * 1024
+        }
