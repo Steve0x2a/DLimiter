@@ -10,6 +10,8 @@
 
 业余摸鱼工具(~~屎山~~), 如有意见, 建议issue或直接pr.
 
+NasTool 这款无敌的工具正在准备支持[类似功能](https://github.com/jxxghp/nas-tools/commit/a82ba2f5b5caecef4a6854a4eca0b683fdfaa3f1), 希望本项目(~~屎山~~)早日入土！
+
 ### 目前支持播放器
 
 - Emby
