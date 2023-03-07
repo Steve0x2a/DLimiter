@@ -66,7 +66,7 @@ def jellyfin_apply_limit(context: bytes):
     # Jellyfin的Webhook不会返回IP地址，只能通过API获取
 
     if event.event == EVENT_START:
-        if get_jellyfin_playing_session_count(Config().cfg.jellyfin.url, Config().cfg.jellyfin.api_key) >= 0:
+        if get_jellyfin_playing_session_count(Config().cfg.jellyfin.url, Config().cfg.jellyfin.api_key) > 0:
             # 遍历所有下载器
             for downloader in Config().downloaders:
                 downloader.set_speed_limit(downloader.limit_speed_down, downloader.limit_speed_up, False)
